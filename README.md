@@ -1,0 +1,2 @@
+# Snake
+For educational purposes
