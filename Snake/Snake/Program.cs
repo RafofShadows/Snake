@@ -18,13 +18,13 @@ namespace Snake
             
             p2.Draw();
 
-            Console.ReadLine();
-        }
+            HorizontalLine line1 = new HorizontalLine(2, 18, 2, '#');
+            line1.Draw();
 
-        static void Draw(int x, int y, char sym)
-        {
-            Console.SetCursorPosition(x, y);
-            Console.Write(sym);
+            VerticalLine line2 = new VerticalLine(15, 0, 10, '=');
+            line2.Draw();
+
+            Console.ReadLine();
         }
     }
 }
