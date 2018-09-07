@@ -61,5 +61,34 @@ namespace Snake
                     return;
             }
         }
+
+        public bool Eat(Point target)
+        {
+            Point head = GetNextPoint();
+            if (head.Hits(target))
+            {
+                target.symbol = head.symbol;
+                pList.Add(target);
+                target.Draw();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool Suicide()
+        {
+            Point head = pList.Last();
+            for (int i = 0; i < pList.Count - 2; i++)
+            {
+                if (pList[i].Hits(head))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

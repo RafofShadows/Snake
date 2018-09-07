@@ -10,7 +10,7 @@ namespace Snake
     {
         private int x;
         private int y;
-        private char symbol;
+        internal char symbol;
 
         public Point()
         {
@@ -61,6 +61,11 @@ namespace Snake
         {
             symbol = ' ';
             Draw();
+        }
+
+        public bool Hits(Point target)
+        {
+            return x == target.x && y == target.y;
         }
     }
 }
